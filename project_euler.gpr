@@ -1,0 +1,71 @@
+-------------------------------------------------------------------------------
+--
+--  ALICE - Adventures for Learning and Inspiring Coding Excellence
+--  Copyright (c) 2023 Francesc Rocher <francesc.rocher@gmail.com>
+--  SPDX-License-Identifier: MIT
+--
+-------------------------------------------------------------------------------
+
+with "config/alice_config.gpr";
+project Project_Euler is
+
+   for Source_Dirs use ("project_euler/src/**", "config/");
+   for Object_Dir use "project_euler/obj/" & Alice_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "project_euler/bin/";
+   for Main use (
+       "g0002_even_fibonacci_numbers.adb"
+      ,"g0007_10001st_prime.adb"
+      ,"g0014_longest_collatz_sequence.adb"
+
+      ,"c0001_multiples_of_3_or_5"
+      ,"c0002_even_fibonacci_numbers.adb"
+      ,"c0003_largest_prime_factor.adb"
+      ,"c0004_largest_palindrome_product.adb"
+      ,"c0005_smallest_multiple.adb"
+      ,"c0006_sum_square_difference.adb"
+      ,"c0007_10001st_prime.adb"
+      ,"c0008_largest_product_in_a_series.adb"
+      ,"c0009_special_pythagorean_triplet.adb"
+      ,"c0010_summation_of_primes.adb"
+      ,"c0011_largest_product_in_a_grid.adb"
+      ,"c0012_highly_divisible_triangular_number.adb"
+      ,"c0013_large_sum.adb"
+      ,"c0014_longest_collatz_sequence.adb"
+      ,"c0015_lattice_paths.adb"
+      ,"c0016_power_digit_sum.adb"
+      ,"c0017_number_letter_counts.adb"
+      ,"c0018_maximum_path_sum_i.adb"
+      ,"c0019_counting_sundays.adb"
+      ,"c0020_factorial_digit_sum.adb"
+      ,"c0021_amicable_numbers.adb"
+      ,"c0022_names_scores.adb"
+      ,"c0023_non_abundant_sums.adb"
+      ,"c0024_lexicographic_permutations.adb"
+      ,"c0025_1000_digit_fibonacci_number.adb"
+      ,"c0026_reciprocal_cycles.adb"
+      ,"c0027_quadratic_primes.adb"
+      ,"c0028_number_spiral_diagonals.adb"
+      ,"c0029_distinct_powers.adb"
+      ,"c0030_digit_fifth_powers.adb"
+   );
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+         Alice_Config.Ada_Compiler_Switches &
+         (
+              "-gnatW8"   --  Wide character encoding method
+            , "-gnat2022" --  Ada 2022 mode
+            , "-gnatX"    --  Language extensions permitted
+         );
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
+
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
+
+end Project_Euler;
