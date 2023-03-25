@@ -32,19 +32,31 @@ your limits.
 With Alice, you can collaborate in a variety of ways:
    * Implementing new solutions to challenging problems: there are +800
      problems in Project Euler!
-   * Creating awesome visualizations to already existing solutions.
-   * Developing new graphical interfaces using your preferred GUI library.
-   * Sharing common functionality, refactoring or improving the Alice
-     framework itself, or creating or extending spinoff libraries, like
-     [Euler Tools](https://github.com/rocher/euler_tools) has been created to
-     solve Project Euler problems.
+      * Improve existing algorithms.
+      * Implement new algorithms.
+      * Use parallelism to explore the search space using multiple tasks.
+      * Share and export common functionality as new elements in the [Euler
+        Tools](https://github.com/rocher/euler_tools) library.
+      * Create awesome visualizations to problem solutions by implementing
+        the GUI interface.
+      * Explore algorithm behavior of problem solutions by adding new
+        parameters.
+   * Developing new graphical interfaces using your preferred GUI library:
+     GTK, SDL, SFML or LVGL, to mention some of them.
+   * Refactor and improve the Alice framework itself to inspire new concepts
+     towards coding excellence.
+   * Integrate new sources of problems or challenges (Codility, Hacker Rank),
+     learning sites or references. For example, would make sense to have
+     Rosetta Code somehow integrated in Alice?
 
 Alice is still in the early stages of development, and things are likely to
 change as we continue to refine and improve the framework. While Alice is
 still a work in progress, it is already starting to take shape as a robust
 and usable tool for exploring the challenges of the aforementioned _Problem
 Sources_. For example, to solve a Project Euler problem, there are two
-interfaces you can implement: CLI, a basic Command Line Interface; and GUI, a generic Graphical User Interface to create visual representations.
+interfaces you can implement: CLI, a basic Command Line Interface; and GUI, a
+generic Graphical User Interface to create visual representations. Take a
+look at some of the provided examples.
 
 ---
 ## TODO List
