@@ -13,5 +13,7 @@ website = "https://github.com/rocher/alice"
 ansiada = "^1.0.0"
 gnoga = "^2.1.2"
 euler_tools = "^1.1.0"
-[[pins]]
-euler_tools = { path='../euler_tools' }
+[[depends-on]]
+parse_args = "~0.9.0"
+[[depends-on]]
+simple_logging = "^1.2.0"
