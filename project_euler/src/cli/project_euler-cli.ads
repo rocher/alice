@@ -6,6 +6,8 @@
 --
 -------------------------------------------------------------------------------
 
+with Parse_Args;
+
 package Project_Euler.CLI is
 
    type CLI_Type is interface;
@@ -19,6 +21,14 @@ package Project_Euler.CLI is
    function Brief (Problem : CLI_Type) return String is abstract;
    --  Return a brief description of the problem, usually the last sentence
    --  os the description found in Project Euler web site.
+
+   procedure Initialize
+     (Problem : CLI_Type; Parser : in out Parse_Args.Argument_Parser) is null;
+   --  This procedure allow objects setting global/private stuff and adding
+   --  options.
+
+   procedure Set_Options
+     (Problem : in out CLI_Type; Parser : Parse_Args.Argument_Parser) is null;
 
    function Answer (Problem : in out CLI_Type) return String is abstract;
    --  Return a string containing the solution to the problem as it was
