@@ -8,7 +8,7 @@
 
 package Project_Euler.CLI.Runner is
 
-   procedure Run (Problem : CLI_Type'Class);
+   procedure Run (Problem : in out CLI_Type'Class);
    --  Runs the given Problem.
 
 end Project_Euler.CLI.Runner;

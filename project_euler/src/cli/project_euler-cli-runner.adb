@@ -7,8 +7,12 @@
 -------------------------------------------------------------------------------
 
 with Ada.Strings.Unbounded;
-with AnsiAda; use AnsiAda;
 with Text_IO; use Text_IO;
+
+with AnsiAda;        use AnsiAda;
+with Alice_Config;   use Alice_Config;
+with Parse_Args;     use Parse_Args;
+with Simple_Logging; use Simple_Logging;
 
 package body Project_Euler.CLI.Runner is
 
@@ -39,8 +43,37 @@ package body Project_Euler.CLI.Runner is
       return Text;
    end Fill_Paragraph;
 
-   procedure Run (Problem : CLI_Type'Class) is
+   procedure Run (Problem : in out CLI_Type'Class) is
+      Parser : Parse_Args.Argument_Parser;
    begin
+      pragma Warnings (Off);
+      if Alice_Config.Build_Profile = development then
+         Simple_Logging.Level := Simple_Logging.Debug;
+      else
+         Simple_Logging.Level := Simple_Logging.Info;
+      end if;
+      pragma Warnings (On);
+
+      Parser.Add_Option
+        (Make_Boolean_Option (False), "help", 'h', "help",
+         "Display this text");
+      Problem.Initialize (Parser);
+
+      Parser.Parse_Command_Line;
+      if Parser.Parse_Success then
+         if Parser.Boolean_Value ("help") then
+            Parser.Usage;
+            return;
+         else
+            Set_Options (Problem, Parser);
+         end if;
+      else
+         Put_Line
+           ("Error while parsing command-line arguments: " &
+            Parser.Parse_Message);
+         return;
+      end if;
+
       if Use_Ansi then
          Put_Line
            (Color_Wrap
