@@ -24,7 +24,7 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0001_Multiples_Of_3_Or_5 is
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Answer : Integer_Type;
    begin
       Answer :=

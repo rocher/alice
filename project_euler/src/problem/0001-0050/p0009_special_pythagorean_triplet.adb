@@ -31,7 +31,7 @@ package body P0009_Special_Pythagorean_Triplet is
 
    A, B : Natural;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Answer : Natural;
    begin
 

@@ -32,7 +32,7 @@ package body P0021_Amicable_Numbers is
 
    Amicable_Counter : Natural := 0;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Answer : Integer_Type := 0;
    begin
 

@@ -33,7 +33,7 @@ package P0013_Large_Sum is
      ("Work out the first ten digits of the sum of the following " &
       "one-hundred 50-digit numbers.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is
      ("List of numbers attached in the problem description.");

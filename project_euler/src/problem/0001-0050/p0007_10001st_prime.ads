@@ -35,7 +35,7 @@ package P0007_10001st_Prime is
    overriding function Brief (Problem : Problem_Type) return String is
      ("What is the 10001st prime number?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

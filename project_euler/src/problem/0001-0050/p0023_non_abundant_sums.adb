@@ -40,7 +40,7 @@ package body P0023_Non_Abundant_Sums is
 
    Non_Abundant_Counter : Natural := 0;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Is_Sum_Of_Abundant_Numbers : Boolean;
       Answer                     : Integer_Type := 1 + 2;
    begin

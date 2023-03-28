@@ -45,9 +45,7 @@ package body P0014_Longest_Collatz_Sequence is
    -- Answer --
    ------------
 
-   overriding function Answer (Problem : Problem_Type) return String is
-      Start  : Integer_Type := 999_999;
-      Number : Integer_Type := 0;
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Length : Integer_Type := 0;
       Answer : Integer_Type := 0;
    begin

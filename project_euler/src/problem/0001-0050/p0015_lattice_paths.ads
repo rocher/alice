@@ -39,7 +39,7 @@ package P0015_Lattice_Paths is
       "being able to move to the right and down) are there through a " &
       "20×20 grid?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

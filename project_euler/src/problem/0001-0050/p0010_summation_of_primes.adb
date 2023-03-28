@@ -23,7 +23,7 @@ with Euler_Tools_Int1; use Euler_Tools_Int1;
 
 package body P0010_Summation_Of_Primes is
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Answer : Integer_Type := 0;
       Cursor : Prime_Cursor_Type;
       Prime  : Integer_Type := Prime_First (Cursor);

@@ -43,7 +43,7 @@ package body P0012_Highly_Divisible_Triangular_Number is
 
    Divisors : Set_Type;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Number : Integer_Type := 8;
       Answer : Integer_Type;
    begin

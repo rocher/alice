@@ -49,7 +49,7 @@ package P0023_Non_Abundant_Sums is
      ("Find the sum of all the positive integers which cannot be written " &
       "as the sum of two abundant numbers.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

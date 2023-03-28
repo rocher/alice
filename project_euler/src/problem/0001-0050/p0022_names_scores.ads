@@ -41,7 +41,7 @@ package P0022_Names_Scores is
    overriding function Brief (Problem : Problem_Type) return String is
      ("What is the total of all the name scores in the file?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

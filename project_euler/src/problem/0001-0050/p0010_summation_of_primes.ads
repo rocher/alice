@@ -33,7 +33,7 @@ package P0010_Summation_Of_Primes is
    overriding function Brief (Problem : Problem_Type) return String is
      ("Find the sum of all the primes below two million.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

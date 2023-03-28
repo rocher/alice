@@ -40,7 +40,7 @@ package P0009_Special_Pythagorean_Triplet is
      ("There exists exactly one Pythagorean triplet for which " &
       "a + b + c = 1000. Find the product abc.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

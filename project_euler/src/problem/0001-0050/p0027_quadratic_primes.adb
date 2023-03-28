@@ -45,7 +45,7 @@ package body P0027_Quadratic_Primes is
    Coefficient_A, Coefficient_B : Integer_Type;
    Max_Sequence                 : Natural := 0;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       A, B    : Integer_Type;
       N, Eval : Integer_Type;
       Cursor  : Prime_Cursor_Type;

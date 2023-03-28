@@ -60,7 +60,7 @@ package P0011_Largest_Product_In_A_Grid is
      ("What is the greatest product of four adjacent numbers in the same " &
       "direction (up, down, left, right, or diagonally) in the 20×20 grid?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is
      ("Grid attached in the problem description.");

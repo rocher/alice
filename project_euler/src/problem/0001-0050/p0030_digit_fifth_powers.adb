@@ -35,7 +35,7 @@ package body P0030_Digit_Fifth_Powers is
 
    Number_Counter : Natural := 0;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       P5     : array (0 .. 9) of Integer_Type;
       Powers : Integer_Type;
       Answer : Integer_Type := 0;

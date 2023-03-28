@@ -35,7 +35,7 @@ package P0004_Largest_Palindrome_Product is
      ("Find the largest palindrome made from the product of two " &
       "3-digit numbers.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

@@ -63,7 +63,7 @@ package P0018_Maximum_Path_Sum_I is
      ("Find the maximum total from top to bottom of the triangle below " &
       "(see problem description)");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

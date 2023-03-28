@@ -33,7 +33,7 @@ with Euler_Tools_Int1; use Euler_Tools_Int1;
 
 package body P0006_Sum_Square_Difference is
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Σ_Of_Squares : constant Integer_Type := Sum_Squares (100);
       Square_Of_Σ  : constant Integer_Type := Sum_Sequence (100)**2;
       Answer       : Integer_Type;

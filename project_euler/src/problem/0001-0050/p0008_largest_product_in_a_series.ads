@@ -36,7 +36,7 @@ package P0008_Largest_Product_In_A_Series is
      ("Find the thirteen adjacent digits in the 1000-digit number that " &
       "have the greatest product. What is the value of this product?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

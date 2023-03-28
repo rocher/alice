@@ -49,7 +49,7 @@ package P0026_Reciprocal_Cycles is
      ("Find the value of d < 1000 for which 1/d contains the longest " &
       "recurring cycle in its decimal fraction part.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

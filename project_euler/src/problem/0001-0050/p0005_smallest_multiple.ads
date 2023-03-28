@@ -36,7 +36,7 @@ package P0005_Smallest_Multiple is
      ("What is the smallest positive number that is evenly divisible by " &
       "all of the numbers from 1 to 20?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

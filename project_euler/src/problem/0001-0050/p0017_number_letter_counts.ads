@@ -41,7 +41,7 @@ package P0017_Number_Letter_Counts is
      ("If all the numbers from 1 to 1000 (one thousand) inclusive were " &
       "written out in words, how many letters would be used?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

@@ -36,7 +36,7 @@ package P0020_Factorial_Digit_Sum is
    overriding function Brief (Problem : Problem_Type) return String is
      ("Find the sum of the digits in the number 100!");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

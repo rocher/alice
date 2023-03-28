@@ -33,7 +33,7 @@ package P0003_Largest_Prime_Factor is
    overriding function Brief (Problem : Problem_Type) return String is
      ("What is the largest prime factor of the number 600851475143?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

@@ -51,7 +51,7 @@ package P0014_Longest_Collatz_Sequence is
      ("Which starting number, under one million, produces the longest " &
       "[Collatz] chain?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

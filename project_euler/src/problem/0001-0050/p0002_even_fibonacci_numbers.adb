@@ -42,7 +42,7 @@ package body P0002_Even_Fibonacci_Numbers is
    -- Answer --
    ------------
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Number : Integer_Type := Fibonacci_Start;
       Answer : Integer_Type := 0;
    begin

@@ -33,7 +33,7 @@ package P0016_Power_Digit_Sum is
    overriding function Brief (Problem : Problem_Type) return String is
      ("What is the sum of the digits of the number 2^1000?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

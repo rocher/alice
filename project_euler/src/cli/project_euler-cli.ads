@@ -20,7 +20,7 @@ package Project_Euler.CLI is
    --  Return a brief description of the problem, usually the last sentence
    --  os the description found in Project Euler web site.
 
-   function Answer (Problem : CLI_Type) return String is abstract;
+   function Answer (Problem : in out CLI_Type) return String is abstract;
    --  Return a string containing the solution to the problem as it was
    --  entered in the Project Euler web site.
 

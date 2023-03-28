@@ -40,7 +40,7 @@ package body P0026_Reciprocal_Cycles is
 
    Max_Length : Natural := 0;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       DDiv         : Decimal_Division_Type;
       Decimals     : Natural;
       Cycle_Length : Natural;

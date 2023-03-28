@@ -27,7 +27,7 @@ package body P0004_Largest_Palindrome_Product is
    N1 : Integer_Type := 999;
    N2 : Integer_Type := 999;
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Answer : Integer_Type := 0;
    begin
 

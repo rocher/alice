@@ -39,7 +39,7 @@ package P0002_Even_Fibonacci_Numbers is
      ("By considering the terms in the Fibonacci sequence whose values do " &
       "not exceed four million, find the sum of the even-valued terms.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

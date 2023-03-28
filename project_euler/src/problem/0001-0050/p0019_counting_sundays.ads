@@ -46,7 +46,7 @@ package P0019_Counting_Sundays is
      ("How many Sundays fell on the first of the month during the " &
       "twentieth century (1 Jan 1901 to 31 Dec 2000)?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String is ("");
 

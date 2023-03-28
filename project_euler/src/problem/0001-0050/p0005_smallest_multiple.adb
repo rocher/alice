@@ -25,7 +25,7 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0005_Smallest_Multiple is
 
-   overriding function Answer (Problem : Problem_Type) return String is
+   overriding function Answer (Problem : in out Problem_Type) return String is
       Answer       : Integer_Type := 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * 20;
       Factor       : Integer_Type;
       Is_Divisible : Boolean;

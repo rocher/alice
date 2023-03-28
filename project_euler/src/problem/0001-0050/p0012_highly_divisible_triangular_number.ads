@@ -52,7 +52,7 @@ package P0012_Highly_Divisible_Triangular_Number is
      ("What is the value of the first triangle number to have over five " &
       "hundred divisors?");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

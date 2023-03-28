@@ -54,7 +54,7 @@ package P0027_Quadratic_Primes is
       "expression that produces the maximum number of primes for " &
       "consecutive values of n, starting with n=0.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 

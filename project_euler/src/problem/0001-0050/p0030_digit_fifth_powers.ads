@@ -44,7 +44,7 @@ package P0030_Digit_Fifth_Powers is
      ("Find the sum of all the numbers that can be written as the sum of " &
       "fifth powers of their digits.");
 
-   overriding function Answer (Problem : Problem_Type) return String;
+   overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
 
