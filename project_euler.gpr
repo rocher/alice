@@ -48,8 +48,6 @@ project Project_Euler is
       ,"c0028_number_spiral_diagonals.adb"
       ,"c0029_distinct_powers.adb"
       ,"c0030_digit_fifth_powers.adb"
-      ,"c0700_eulercoin.adb"
-      ,"c0826_birds_on_a_wire.adb"
    );
 
    package Compiler is
