@@ -35,20 +35,56 @@
 --
 -------------------------------------------------------------------------------
 
-with Euler_Tools_Int1; use Euler_Tools_Int1;
+with Simple_Logging; use Simple_Logging;
 
 package body P0014_Longest_Collatz_Sequence is
 
-   Max_Length : Integer_Type := 0;
+   ----------------
+   -- Initialize --
+   ----------------
+
+   overriding procedure Initialize
+     (Problem : Problem_Type; Parser : in out Parse_Args.Argument_Parser)
+   is
+   begin
+      Parser.Add_Option
+        (Make_Boolean_Option (False), Name => "REVERSE", Short_Option => 'r',
+         Long_Option                       => "reverse",
+         Usage => "Traverse search space in reverse order");
+   end Initialize;
+
+   -----------------
+   -- Set_Options --
+   -----------------
+
+   overriding procedure Set_Options
+     (Problem : in out Problem_Type; Parser : Parse_Args.Argument_Parser)
+   is
+   begin
+      Problem.Option_Reverse := Parser.Boolean_Value ("REVERSE");
+      Simple_Logging.Debug ("Reverse = " & Problem.Option_Reverse'Image);
+   end Set_Options;
 
    ------------
    -- Answer --
    ------------
 
    overriding function Answer (Problem : in out Problem_Type) return String is
+      Start   : Integer_Type;
+      Δ_Start : Integer_Type;
+      Last    : Integer_Type;
+      Number  : Integer_Type;
+
       Length : Integer_Type := 0;
       Answer : Integer_Type := 0;
    begin
+
+      Start   := (if Problem.Option_Reverse then 999_999 else 1);
+      Δ_Start := (if Problem.Option_Reverse then -1 else 1);
+      Last    := (if Problem.Option_Reverse then 1 else 999_999);
+
+      Problem.Max_Length := 0;
+      Problem.Max_Count  := 0;
 
       loop
          Number := Collatz_Next (Start);
@@ -60,13 +96,14 @@ package body P0014_Longest_Collatz_Sequence is
             exit when Number = 1;
          end loop;
 
-         if Length > Max_Length then
-            Max_Length := Length;
-            Answer     := Start;
+         if Length > Problem.Max_Length then
+            Problem.Max_Length := Length;
+            Problem.Max_Count  := @ + 1;
+            Answer             := Start;
          end if;
 
-         exit when Start = 99_999;  --  ! Intuition: Start >= 99_999
-         Start := @ - 1;
+         exit when Start = Last;
+         Start := @ + Δ_Start;
       end loop;
 
       return To_String (Answer);
@@ -77,7 +114,8 @@ package body P0014_Longest_Collatz_Sequence is
    -----------
 
    overriding function Notes (Problem : Problem_Type) return String is
-     ("The chain contains" & Max_Length'Image & " numbers.");
+     ("The chain contains" & Problem.Max_Length'Image &
+      " numbers; Max changed" & Problem.Max_Count'Image & " times");
 
    -------------------
    -- Plotter_Setup --

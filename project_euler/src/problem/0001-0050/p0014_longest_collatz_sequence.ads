@@ -38,9 +38,12 @@
 with Project_Euler.GUI;         use Project_Euler.GUI;
 with Project_Euler.GUI_Plotter; use Project_Euler.GUI_Plotter;
 
+with Euler_Tools_Int1; use Euler_Tools_Int1;
+with Parse_Args;       use Parse_Args;
+
 package P0014_Longest_Collatz_Sequence is
 
-   type Problem_Type is new GUI_Type with null record;
+   type Problem_Type is new GUI_Type with private;
 
    overriding function Number (Problem : Problem_Type) return Natural is (14);
 
@@ -51,6 +54,12 @@ package P0014_Longest_Collatz_Sequence is
      ("Which starting number, under one million, produces the longest " &
       "[Collatz] chain?");
 
+   overriding procedure Initialize
+     (Problem : Problem_Type; Parser : in out Parse_Args.Argument_Parser);
+
+   overriding procedure Set_Options
+     (Problem : in out Problem_Type; Parser : Parse_Args.Argument_Parser);
+
    overriding function Answer (Problem : in out Problem_Type) return String;
 
    overriding function Notes (Problem : Problem_Type) return String;
@@ -60,5 +69,14 @@ package P0014_Longest_Collatz_Sequence is
 
    overriding procedure On_Start
      (Problem : in out Problem_Type; Plotter : Pointer_To_Plotter_Class);
+
+private
+
+   type Problem_Type is new GUI_Type with record
+      Max_Length : Integer_Type := 0;
+      Max_Count  : Natural      := 0;
+
+      Option_Reverse : Boolean := False;
+   end record;
 
 end P0014_Longest_Collatz_Sequence;
