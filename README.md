@@ -12,12 +12,14 @@
 > *Adventures for Learning and Inspiring Coding Excellence*
 
 ## Presentation
+
 Alice is an open source Ada programming language framework designed to help
 programmers implement and explore different solutions to problems from
 various sources, including [Project Euler](https://projecteuler.net),
 [Codingame](https://codingame.com) and [Advent of
 Code](https://adventofcode.com) (currently, only support for Project Euler is
-present in Alice). With Alice, you can flex your coding muscles and work on problems that challenge your creativity, logic, and problem-solving skills.
+present in Alice). With Alice, you can flex your coding muscles and work on
+problems that challenge your creativity, logic, and problem-solving skills.
 
 At the heart of Alice is a commitment to coding excellence, and Ada is the
 perfect language to bring this vision to life. As a high-level programming
@@ -59,45 +61,6 @@ generic Graphical User Interface to create visual representations. Take a
 look at some of the provided examples.
 
 ---
-## TODO List
-
-### Short term
-   * [ ] Enrich the Plotter interface:
-     * [ ] Fix axes labels.
-     * [ ] Add answer visualization as text.
-     * [ ] Add Problem parameters that users can set/change.
-     * [ ] Add more Plotter subprograms and parameters.
-     * [ ] Add algorithm and steps explanations.
-     * [ ] Add legends for graphical elements.
-     * [ ] Add more Problem information (URL, difficulty ..)
-     * [ ] Check font sizes on axes and GUI in general.
-   * [ ] Gnoga: use HTML `div` elements instead of table cells in grid views
-     (Gnoga patch)
-   * [ ] Refactoring:
-     * [ ] Reorganize and rename packages, interfaces and types.
-     * [ ] Use `Ada.Finalization.Controlled` types for Plotters and Problems.
-   * [x] Add unit tests to check if a problem is solved correctly.
-     * Implemented in the CLI Runner using MD5 to hide the correct answer. 
-   * [ ] Documentation for contributors:
-     * [ ] How to implement TUI or GUI Problem.
-     * [ ] For GUI Problems, how to use the Plotter and GUI interface.
-     * [ ] Instructions to implement new GUI Runners based on a different
-       graphic framework.
-   * [ ] Explore extension alternatives:
-     * [ ] Analyze the possibility to have multi-problem Runners.
-     * [ ] Add measures of time and algorithm complexity to compare two
-       different implementations.
-
-### Mid term
-   * [ ] Publish the project in Alire.
-   * [ ] Add other problems sources, like Advent of Code or CodinGame.
-   * [ ] Continue solving Project Euler problems.
-
-### Long term
-   * [ ] Add a user interface to interact with Alice in a similar way one can
-     do in CodinGame.
-
----
 ## Glossary
 
    * **CLIs** : Command Line Interfaces (CLIs) are the most basic interfaces
@@ -114,7 +77,8 @@ look at some of the provided examples.
     Command Line Interface (CLI), the Graphical User Interface (GUI) or any
     other interface available in ALICE.
    * **Problem Source** : Collection of problems or programming challenges
-     that can be implemented using one of the currently available Runners. Currently, only [Project Euler](https://projecteuler.net) is supported.
+     that can be implemented using one of the currently available Runners.
+     Currently, only [Project Euler](https://projecteuler.net) is supported.
    * **Runner** : Software artifact used to create a program that can show a
      Problem solution. Runners usually implement only one of the interfaces
      that problems can implement (CLI or GUI), but not both. Runners are
