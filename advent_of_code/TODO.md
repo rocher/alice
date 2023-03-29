@@ -1,8 +1,8 @@
 <img src="../Alice_Adventures.png" width="200" />
 
-## Alice / Advent of Code TODO List
+# Alice • Advent of Code TODO List
 
-### Short term
+## Short term
 
    * Use Cases:
      * Example input found in problems description must be added as a test

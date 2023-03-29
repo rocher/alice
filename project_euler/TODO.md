@@ -1,8 +1,8 @@
 <img src="../Alice_Adventures.png" width="200" />
 
-## Alice / Project Euler TODO List
+# Alice • Project Euler TODO List
 
-### Short term
+## Short term
 
    * [ ] Enrich the Plotter interface:
      * [ ] Fix axes labels.
@@ -21,7 +21,8 @@
      * [ ] Reorganize and rename packages, interfaces and types.
      * [ ] Use `Ada.Finalization.Controlled` types for Plotters and Problems.
    * [x] Add unit tests to check if a problem is solved correctly.
-     * Implemented in the CLI Runner using MD5 to hide the correct answer. 
+     * [x] Implemented in the CLI Runner using MD5 to hide the correct
+       answer. 
    * [ ] Documentation for contributors:
      * [ ] How to implement TUI or GUI Problem.
      * [ ] For GUI Problems, how to use the Plotter and GUI interface.

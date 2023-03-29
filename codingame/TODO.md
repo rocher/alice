@@ -1,8 +1,8 @@
 <img src="../Alice_Adventures.png" width="200" />
 
-## Alice / Codingame TODO List
+# Alice • Codingame TODO List
 
-### Short term
+## Short term
 
    * Add support for puzzles, based on [Project Euler
      CLI](../project_euler/src/cli/).
@@ -15,7 +15,7 @@
      solution, the set of test cases they found in Codingame and check the
      correctness of the implementation.
 
-### Mid term
+## Mid term
 
    * Add support for *visual* or game-like puzzles, e.g. "Mars Lander" and
      "Power of Thor".
@@ -34,7 +34,7 @@
        * [ ] Implement the game runner & checker.
        * [ ] Implement some sample games.
 
-### Long term
+## Long term
 
    * [ ] Add support for interactive development like in Codingame.
 
