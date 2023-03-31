@@ -6,11 +6,17 @@
 --
 -------------------------------------------------------------------------------
 
+with Ada.Finalization;
+
 with Parse_Args;
 
 package Project_Euler.CLI is
 
-   type CLI_Type is interface;
+   type CLI_Type is
+   abstract new Ada.Finalization.Limited_Controlled with null record;
+
+   overriding procedure Initialize (Problem : in out CLI_Type) is null;
+   overriding procedure Finalize (Problem : in out CLI_Type) is null;
 
    function Number (Problem : CLI_Type) return Natural is abstract;
    --  Return the number of the PRoject Euler problem begin solved.

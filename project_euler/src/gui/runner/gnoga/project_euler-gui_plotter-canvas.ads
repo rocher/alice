@@ -15,6 +15,7 @@ with Project_Euler.GUI_Runner_Gnoga; use Project_Euler.GUI_Runner_Gnoga;
 package Project_Euler.GUI_Plotter.Canvas is
 
    type Canvas_Type is limited new Plotter_Type with private;
+   type Canvas_Access is access Canvas_Type;
 
    type Canvas_Name is (Back, Draw, Top);
 

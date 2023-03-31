@@ -17,3 +17,5 @@ euler_tools = "^1.1.0"
 parse_args = "~0.9.0"
 [[depends-on]]
 simple_logging = "^1.2.0"
+[[pins]]
+gnoga = { path='../gnoga_2.1.2_5f127c56' }

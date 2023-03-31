@@ -35,9 +35,19 @@
 --
 -------------------------------------------------------------------------------
 
-with Simple_Logging; use Simple_Logging;
+with Simple_Logging;
 
 package body P0014_Longest_Collatz_Sequence is
+
+   overriding procedure Initialize (Problem : in out Problem_Type) is
+   begin
+      Simple_Logging.Always ("Initialize Problem_Type @" & Problem'Address'Image);
+   end Initialize;
+
+   --  overriding procedure Finalize (Problem : in out Problem_Type) is
+   --  begin
+   --     Simple_Logging.Always ("Finalize Problem_Type");
+   --  end Finalize;
 
    ----------------
    -- Initialize --

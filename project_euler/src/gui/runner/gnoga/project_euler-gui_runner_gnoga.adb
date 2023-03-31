@@ -7,14 +7,11 @@
 -------------------------------------------------------------------------------
 
 with Gnoga.Application.Multi_Connect;
-with Gnoga.Gui.Base;
-with Gnoga.Gui.Element;
-with Gnoga.Gui.Element.Common;
-with Gnoga.Gui.View.Grid;
 with Gnoga.Gui.Window;
 with UXStrings;
 
-with Project_Euler.GUI;                use Project_Euler.GUI;
+with Simple_Logging;
+
 with Project_Euler.GUI_Plotter.Canvas; use Project_Euler.GUI_Plotter.Canvas;
 
 use all type Gnoga.String;
@@ -26,23 +23,18 @@ package body Project_Euler.GUI_Runner_Gnoga is
    Window_Layout : constant Gnoga.Gui.View.Grid.Grid_Rows_Type :=
      [[COL, COL, COL], [COL, COL, SPN], [COL, COL, SPN]];
 
-   type Button_Bar_Type is record
-      Panel    : Gnoga.Gui.View.Pointer_To_View_Base_Class;
-      Start    : Gnoga.Gui.Element.Common.Button_Type;
-      Step     : Gnoga.Gui.Element.Common.Button_Type;
-      Continue : Gnoga.Gui.Element.Common.Button_Type;
-      Stop     : Gnoga.Gui.Element.Common.Button_Type;
-   end record;
+   overriding procedure Initialize (Data : in out App_Data_Type) is
+   begin
+      Simple_Logging.Always ("Initialize App_Data_Type @" & Data'Address'Image);
+   end Initialize;
 
-   type App_Data_Type is new Gnoga.Types.Connection_Data_Type with record
-      Grid         : Gnoga.Gui.View.Grid.Grid_View_Type;
-      Panel_Margin : Gnoga.Gui.View.Pointer_To_View_Base_Class;
-      Panel_Title  : Gnoga.Gui.View.Pointer_To_View_Base_Class;
-      Button_Bar   : Button_Bar_Type;
-      Plotter      : aliased Canvas_Type;
-      Problem      : Pointer_To_GUI_Class := null;
-   end record;
-   type App_Access is access all App_Data_Type;
+   --  overriding procedure Finalize (Data : in out App_Data_Type) is
+   --     procedure Free_Problem is new Ada.Unchecked_Deallocation
+   --       (GUI_Type'Class, Pointer_To_GUI_Class);
+   --  begin
+   --     Free_Problem (Data.Problem);
+   --     Simple_Logging.Always ("Finalize App_Data_Type");
+   --  end Finalize;
 
    procedure Button_Start_On_Click
      (Object : in out Gnoga.Gui.Base.Base_Type'Class);
@@ -79,7 +71,7 @@ package body Project_Euler.GUI_Runner_Gnoga is
       App.Button_Bar.Step.Disabled (False);
       App.Button_Bar.Stop.Class_Name ("btn btn-danger");
       App.Button_Bar.Stop.Disabled (False);
-      App.Problem.On_Start (App.Plotter'Access);
+      App.Problem.On_Start (App.Plotter);
    end Button_Start_On_Click;
 
    --------------------------
@@ -154,11 +146,15 @@ package body Project_Euler.GUI_Runner_Gnoga is
         .Connection_Holder_Type)
    is
       pragma Unreferenced (Connection);
-      App : constant App_Access := new App_Data_Type;
+      App : App_Access;
+      Canvas : Canvas_Access := new Canvas_Type;
    begin
 
-      Main_Window.Connection_Data (App);
+      App := new App_Data_Type;
+      App.Plotter := Pointer_To_Plotter_Class (Canvas);
       App.Problem := Project_Euler.GUI_Runner_Gnoga.Problem_Factory.all;
+
+      Main_Window.Connection_Data (App);
       Gnoga.Application.Title (UXS (App.Problem.Title));
 
       App.Grid.Create
@@ -220,10 +216,10 @@ package body Project_Euler.GUI_Runner_Gnoga is
       App.Grid.Panel (2, 1).Margin ("10px", "10px", "10px", "10px");
       App.Grid.Style ("position", "relative");
 
-      App.Plotter.Create
+      Canvas.Create
         (App.Grid.Panel (2, 1), Pause_Callback'Access, Stop_Callback'Access,
          Main_Window.Connection_Data);
-      App.Problem.Plotter_Setup (App.Plotter'Access);
+      App.Problem.Plotter_Setup (App.Plotter);
    end On_App_Connect;
 
    ----------

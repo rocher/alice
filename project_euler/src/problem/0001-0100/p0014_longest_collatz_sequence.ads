@@ -45,6 +45,9 @@ package P0014_Longest_Collatz_Sequence is
 
    type Problem_Type is new GUI_Type with private;
 
+   overriding procedure Initialize (Problem : in out Problem_Type);
+   --  overriding procedure Finalize (Problem : in out Problem_Type);
+
    overriding function Number (Problem : Problem_Type) return Natural is (14);
 
    overriding function Title (Problem : Problem_Type) return String is
