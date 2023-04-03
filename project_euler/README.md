@@ -21,7 +21,7 @@ currently used and the final graphical library, the `GUI_Runner_Gnoga` (the
 software artifact that runs your algorithm) will receive user events, whilst
 your implementation will transparently send plot commands to the HTML Canvas.
 
-<img src="design.png" width="800" />
+<p align="center"><img src="design.png" width="80%" /></p>
 
 ---
 ## Example
