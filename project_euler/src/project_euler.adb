@@ -56,7 +56,7 @@ package body Project_Euler is
          when 12 =>
             return Digest = "bc52b79d88b525f2b9a84b8032f9cd88";
          when 13 =>
-            return Digest = "3ac74e6b7bd171f3330bc7947ed96fa8";
+            return Digest = "aa2e7c09c10191cf84042e542b46d70e";
          when 14 =>
             return Digest = "e503e78ff329f3111d1746c484065aac";
          when 15 =>
