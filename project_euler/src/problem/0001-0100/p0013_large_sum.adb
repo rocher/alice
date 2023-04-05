@@ -132,7 +132,7 @@ package body P0013_Large_Sum is
          Answer := Answer + N;
       end loop;
 
-      return To_String (Answer);
+      return To_String (Answer) (2 .. 11);
    end Answer;
 
 end P0013_Large_Sum;
