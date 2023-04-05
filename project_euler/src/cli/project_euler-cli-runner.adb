@@ -54,6 +54,18 @@ package body Project_Euler.CLI.Runner is
       end if;
       pragma Warnings (On);
 
+      if Use_Ansi then
+         Put_Line
+           (Color_Wrap
+              (Text       =>
+                 " Problem" & Problem.Number'Image & " - " & Problem.Title &
+                 " ",
+               Foreground => Foreground (Black),
+               Background => Background (Light_Grey)));
+      else
+         Put_Line ("Problem" & Problem.Number'Image & " - " & Problem.Title);
+      end if;
+
       Parser.Add_Option
         (Make_Boolean_Option (False), "help", 'h', "help",
          "Display this text");
@@ -72,18 +84,6 @@ package body Project_Euler.CLI.Runner is
            ("Error while parsing command-line arguments: " &
             Parser.Parse_Message);
          return;
-      end if;
-
-      if Use_Ansi then
-         Put_Line
-           (Color_Wrap
-              (Text       =>
-                 " Problem" & Problem.Number'Image & " - " & Problem.Title &
-                 " ",
-               Foreground => Foreground (Black),
-               Background => Background (Light_Grey)));
-      else
-         Put_Line ("Problem" & Problem.Number'Image & " - " & Problem.Title);
       end if;
 
       Put (Indent);
