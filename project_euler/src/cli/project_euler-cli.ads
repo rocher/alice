@@ -6,6 +6,8 @@
 --
 -------------------------------------------------------------------------------
 
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+
 with Parse_Args;
 
 package Project_Euler.CLI is
@@ -30,12 +32,11 @@ package Project_Euler.CLI is
    procedure Set_Options
      (Problem : in out CLI_Type; Parser : Parse_Args.Argument_Parser) is null;
 
-   function Answer (Problem : in out CLI_Type) return String is abstract;
+   function Answer
+     (Problem : in out CLI_Type; Notes : in out Unbounded_String)
+      return String is abstract;
    --  Return a string containing the solution to the problem as it was
-   --  entered in the Project Euler web site.
-
-   function Notes (Problem : CLI_Type) return String is abstract;
-   --  Return a string with additional considerations to complement the
-   --  answer.
+   --  entered in the Project Euler web site. Optionally, additional details
+   --  can be briefly described in Notes.
 
 end Project_Euler.CLI;

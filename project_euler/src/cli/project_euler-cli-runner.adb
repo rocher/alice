@@ -6,7 +6,6 @@
 --
 -------------------------------------------------------------------------------
 
-with Ada.Strings.Unbounded;
 with Text_IO; use Text_IO;
 
 with AnsiAda;        use AnsiAda;
@@ -21,7 +20,6 @@ package body Project_Euler.CLI.Runner is
    Use_Ansi  : constant Boolean := True;
 
    function Fill_Paragraph (Text : String) return String is
-      use Ada.Strings.Unbounded;
       Head, Tail : Unbounded_String;
       Cut        : Natural;
    begin
@@ -95,7 +93,8 @@ package body Project_Euler.CLI.Runner is
 
       declare
          Known_Solution   : Boolean          := False;
-         Answer           : constant String  := Problem.Answer;
+         Notes            : Unbounded_String := Null_Unbounded_String;
+         Answer           : constant String  := Problem.Answer (Notes);
          Correct_Solution : constant Boolean :=
            Project_Euler.Check_Solution
              (Problem.Number, Answer, Known_Solution);
@@ -116,16 +115,12 @@ package body Project_Euler.CLI.Runner is
          end if;
          Put (" ]");
          New_Line;
-      end;
 
-      declare
-         Notes : constant String := Problem.Notes;
-      begin
-         if Notes'Length > 0 then
-            Put_Line (Indent & "Note: " & Notes);
+         if Notes.Length > 0 then
+            Put (Indent);
+            Put_Line (Fill_Paragraph ("Note: " & To_String (Notes)));
          end if;
       end;
-
    end Run;
 
 end Project_Euler.CLI.Runner;
