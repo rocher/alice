@@ -23,7 +23,10 @@ use Ada.Numerics.Big_Numbers.Big_Integers;
 
 package body P0013_Large_Sum is
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
       Numbers : constant array (1 .. 100) of Big_Natural :=
         [37_107_287_533_902_102_798_797_998_220_837_590_246_510_135_740_250,
         46_376_937_677_490_009_712_648_124_896_970_078_050_417_018_260_538,
@@ -131,6 +134,10 @@ package body P0013_Large_Sum is
       for N of Numbers loop
          Answer := Answer + N;
       end loop;
+
+      Notes :=
+        To_Unbounded_String
+          ("See the list of numbers attached in the problem description.");
 
       return To_String (Answer) (2 .. 11);
    end Answer;

@@ -26,7 +26,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0021_Amicable_Numbers is
 
@@ -40,8 +41,8 @@ package P0021_Amicable_Numbers is
    overriding function Brief (Problem : Problem_Type) return String is
      ("Evaluate the sum of all the amicable numbers under 10000.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0021_Amicable_Numbers;

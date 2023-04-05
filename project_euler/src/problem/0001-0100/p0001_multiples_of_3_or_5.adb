@@ -24,12 +24,20 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0001_Multiples_Of_3_Or_5 is
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
       Answer : Integer_Type;
    begin
       Answer :=
         Sum_Multiples (3, 1_000) + Sum_Multiples (5, 1_000) -
         Sum_Multiples (15, 1_000);
+
+      Notes :=
+        To_Unbounded_String
+          ("Sum all multiples of 3 and all multiples of 5, " &
+           "and subtract all multiples of 15.");
 
       return To_String (Answer);
    end Answer;

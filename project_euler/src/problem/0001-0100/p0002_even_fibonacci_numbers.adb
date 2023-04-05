@@ -33,8 +33,6 @@ package body P0002_Even_Fibonacci_Numbers is
    --  Action  : Action_IFace_Access;
    --  Plotter : Plotter_IFace_Access;
 
-   Number_Counter : Natural := 0;
-
    type Status_Type is (Stop, Run, Pause, Step);
    Status : Status_Type := Stop;
 
@@ -42,30 +40,29 @@ package body P0002_Even_Fibonacci_Numbers is
    -- Answer --
    ------------
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
-      Number : Integer_Type := Fibonacci_Start;
-      Answer : Integer_Type := 0;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
+      Number  : Integer_Type := Fibonacci_Start;
+      Counter : Natural      := 0;
+      Answer  : Integer_Type := 0;
    begin
-
       loop
          if Is_Even (Number) then
-            Answer         := @ + Number;
-            Number_Counter := @ + 1;
+            Answer  := @ + Number;
+            Counter := @ + 1;
          end if;
          Number := Fibonacci_Next;
          exit when Number > 4_000_000;
       end loop;
 
+      Notes :=
+        To_Unbounded_String
+          ("There are" & Counter'Image & " even Fibonacci numbers < 4000000");
+
       return To_String (Answer);
    end Answer;
-
-   -----------
-   -- Notes --
-   -----------
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("There are" & Number_Counter'Image &
-      " even Fibonacci numbers < 4000000");
 
    -------------------
    -- Plotter_Setup --

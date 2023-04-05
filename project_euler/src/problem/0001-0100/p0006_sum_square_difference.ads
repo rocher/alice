@@ -29,7 +29,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0006_Sum_Square_Difference is
 
@@ -44,8 +45,8 @@ package P0006_Sum_Square_Difference is
      ("Find the difference between the sum of the squares of the first one " &
       "hundred natural numbers and the square of the sum.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String is ("");
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0006_Sum_Square_Difference;

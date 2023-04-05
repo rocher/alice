@@ -29,7 +29,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0028_Number_Spiral_Diagonals is
 
@@ -44,8 +45,8 @@ package P0028_Number_Spiral_Diagonals is
      ("What is the sum of the numbers on the diagonals in a 1001 by 1001 " &
       "spiral formed in the same way?");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String is ("");
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0028_Number_Spiral_Diagonals;

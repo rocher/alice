@@ -29,9 +29,11 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0009_Special_Pythagorean_Triplet is
 
-   A, B : Natural;
-
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
+      A, B   : Natural;
       Answer : Natural;
    begin
 
@@ -53,11 +55,12 @@ package body P0009_Special_Pythagorean_Triplet is
          A := A + 1;
       end loop Main_Loop;
 
+      Notes :=
+        To_Unbounded_String
+          ("Pythagorean triplet: a =" & A'Image & ", b =" & B'Image & ", c =" &
+           Natural'Image (1_000 - A - B));
+
       return To_String (Answer);
    end Answer;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("Pythagorean triplet: a =" & A'Image & ", b =" & B'Image & ", c =" &
-      Natural'Image (1_000 - A - B));
 
 end P0009_Special_Pythagorean_Triplet;

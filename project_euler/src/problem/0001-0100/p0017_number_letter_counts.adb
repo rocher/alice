@@ -31,7 +31,10 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0017_Number_Letter_Counts is
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
       Answer : Natural := 0;
    begin
 

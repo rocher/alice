@@ -38,10 +38,12 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0023_Non_Abundant_Sums is
 
-   Non_Abundant_Counter : Natural := 0;
-
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
       Is_Sum_Of_Abundant_Numbers : Boolean;
+      Non_Abundant_Counter       : Natural      := 0;
       Answer                     : Integer_Type := 1 + 2;
    begin
 
@@ -68,10 +70,11 @@ package body P0023_Non_Abundant_Sums is
 
       end loop;
 
+      Notes :=
+        To_Unbounded_String
+          ("There are" & Non_Abundant_Counter'Image & " numbers like that.");
+
       return To_String (Answer);
    end Answer;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("There are" & Non_Abundant_Counter'Image & " numbers like that.");
 
 end P0023_Non_Abundant_Sums;

@@ -20,7 +20,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0004_Largest_Palindrome_Product is
 
@@ -35,8 +36,8 @@ package P0004_Largest_Palindrome_Product is
      ("Find the largest palindrome made from the product of two " &
       "3-digit numbers.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0004_Largest_Palindrome_Product;

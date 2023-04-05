@@ -19,7 +19,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0010_Summation_Of_Primes is
 
@@ -33,8 +34,8 @@ package P0010_Summation_Of_Primes is
    overriding function Brief (Problem : Problem_Type) return String is
      ("Find the sum of all the primes below two million.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String is ("");
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0010_Summation_Of_Primes;

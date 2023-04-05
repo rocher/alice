@@ -29,7 +29,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0030_Digit_Fifth_Powers is
 
@@ -44,8 +45,8 @@ package P0030_Digit_Fifth_Powers is
      ("Find the sum of all the numbers that can be written as the sum of " &
       "fifth powers of their digits.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0030_Digit_Fifth_Powers;

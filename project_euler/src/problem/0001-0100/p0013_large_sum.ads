@@ -18,7 +18,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0013_Large_Sum is
 
@@ -33,9 +34,8 @@ package P0013_Large_Sum is
      ("Work out the first ten digits of the sum of the following " &
       "one-hundred 50-digit numbers.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("List of numbers attached in the problem description.");
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0013_Large_Sum;

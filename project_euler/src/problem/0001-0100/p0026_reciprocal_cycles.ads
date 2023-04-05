@@ -34,7 +34,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0026_Reciprocal_Cycles is
 
@@ -49,8 +50,8 @@ package P0026_Reciprocal_Cycles is
      ("Find the value of d < 1000 for which 1/d contains the longest " &
       "recurring cycle in its decimal fraction part.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0026_Reciprocal_Cycles;

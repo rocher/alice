@@ -34,10 +34,9 @@ package P{0NUM}_{PACKAGE_TITLE} is
    overriding function Brief (Problem : Problem_Type) return String is
      ("{BRIEF}");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("");
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P{0NUM}_{PACKAGE_TITLE};
 

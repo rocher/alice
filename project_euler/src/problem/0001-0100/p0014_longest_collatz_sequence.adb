@@ -69,7 +69,10 @@ package body P0014_Longest_Collatz_Sequence is
    -- Answer --
    ------------
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
       Start   : Integer_Type;
       Δ_Start : Integer_Type;
       Last    : Integer_Type;
@@ -106,16 +109,13 @@ package body P0014_Longest_Collatz_Sequence is
          Start := @ + Δ_Start;
       end loop;
 
+      Notes :=
+        To_Unbounded_String
+          ("The chain contains" & Problem.Max_Length'Image &
+           " numbers; Max changed" & Problem.Max_Count'Image & " times");
+
       return To_String (Answer);
    end Answer;
-
-   -----------
-   -- Notes --
-   -----------
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("The chain contains" & Problem.Max_Length'Image &
-      " numbers; Max changed" & Problem.Max_Count'Image & " times");
 
    -------------------
    -- Plotter_Setup --

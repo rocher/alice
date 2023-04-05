@@ -42,10 +42,13 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0027_Quadratic_Primes is
 
-   Coefficient_A, Coefficient_B : Integer_Type;
-   Max_Sequence                 : Natural := 0;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
+      Coefficient_A, Coefficient_B : Integer_Type;
+      Max_Sequence                 : Natural := 0;
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
       A, B    : Integer_Type;
       N, Eval : Integer_Type;
       Cursor  : Prime_Cursor_Type;
@@ -90,12 +93,13 @@ package body P0027_Quadratic_Primes is
          exit Over_B when B > 1_000;
       end loop Over_B;
 
+      Notes :=
+        To_Unbounded_String
+          ("Coefficients a =" & Coefficient_A'Image & ", b =" &
+           Coefficient_B'Image & " produce a sequence of" &
+           Max_Sequence'Image & " primes.");
+
       return To_String (Answer);
    end Answer;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("Coefficients a =" & Coefficient_A'Image & ", b =" &
-      Coefficient_B'Image & " produce a sequence of" & Max_Sequence'Image &
-      " primes.");
 
 end P0027_Quadratic_Primes;

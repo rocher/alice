@@ -35,6 +35,7 @@
 --
 -------------------------------------------------------------------------------
 
+with Ada.Strings.Unbounded;     use Ada.Strings.Unbounded;
 with Project_Euler.GUI;         use Project_Euler.GUI;
 with Project_Euler.GUI_Plotter; use Project_Euler.GUI_Plotter;
 
@@ -60,9 +61,9 @@ package P0014_Longest_Collatz_Sequence is
    overriding procedure Set_Options
      (Problem : in out Problem_Type; Parser : Parse_Args.Argument_Parser);
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
    overriding procedure Plotter_Setup
      (Problem : Problem_Type; Plotter : Pointer_To_Plotter_Class);

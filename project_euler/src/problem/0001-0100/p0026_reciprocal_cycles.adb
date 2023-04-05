@@ -38,12 +38,14 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0026_Reciprocal_Cycles is
 
-   Max_Length : Natural := 0;
-
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
       DDiv         : Decimal_Division_Type;
       Decimals     : Natural;
       Cycle_Length : Natural;
+      Max_Length   : Natural := 0;
       Answer       : Natural;
    begin
 
@@ -63,10 +65,11 @@ package body P0026_Reciprocal_Cycles is
          end if;
       end loop;
 
+      Notes :=
+        To_Unbounded_String
+          ("It contains a recurring cycle of" & Max_Length'Image & " digits.");
+
       return To_String (Answer);
    end Answer;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("It contains a recurring cycle of" & Max_Length'Image & " digits.");
 
 end P0026_Reciprocal_Cycles;

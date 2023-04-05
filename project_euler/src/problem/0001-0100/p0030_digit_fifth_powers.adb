@@ -33,12 +33,14 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0030_Digit_Fifth_Powers is
 
-   Number_Counter : Natural := 0;
-
-   overriding function Answer (Problem : in out Problem_Type) return String is
-      P5     : array (0 .. 9) of Integer_Type;
-      Powers : Integer_Type;
-      Answer : Integer_Type := 0;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
+      P5      : array (0 .. 9) of Integer_Type;
+      Powers  : Integer_Type;
+      Counter : Natural      := 0;
+      Answer  : Integer_Type := 0;
    begin
 
       for I in P5'Range loop
@@ -52,15 +54,14 @@ package body P0030_Digit_Fifth_Powers is
             Powers := @ + P5 (Sub_Number (Number, I, 1));
          end loop;
          if Powers = Number then
-            Answer         := @ + Number;
-            Number_Counter := @ + 1;
+            Answer  := @ + Number;
+            Counter := @ + 1;
          end if;
       end loop;
 
+      Notes := To_Unbounded_String ("There are" & Counter'Image & " numbers.");
+
       return To_String (Answer);
    end Answer;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("There are" & Number_Counter'Image & " numbers.");
 
 end P0030_Digit_Fifth_Powers;

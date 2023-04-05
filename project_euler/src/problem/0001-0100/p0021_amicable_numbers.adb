@@ -30,10 +30,12 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0021_Amicable_Numbers is
 
-   Amicable_Counter : Natural := 0;
-
-   overriding function Answer (Problem : in out Problem_Type) return String is
-      Answer : Integer_Type := 0;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
+      Amicable_Counter : Natural      := 0;
+      Answer           : Integer_Type := 0;
    begin
 
       for A in 1 .. 9_998 loop
@@ -45,10 +47,11 @@ package body P0021_Amicable_Numbers is
          end loop;
       end loop;
 
+      Notes :=
+        To_Unbounded_String
+          ("There are" & Amicable_Counter'Image & " amicable numbers < 1000.");
+
       return To_String (Answer);
    end Answer;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("There are" & Amicable_Counter'Image & " amicable numbers < 1000.");
 
 end P0021_Amicable_Numbers;

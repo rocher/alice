@@ -25,7 +25,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0009_Special_Pythagorean_Triplet is
 
@@ -40,8 +41,8 @@ package P0009_Special_Pythagorean_Triplet is
      ("There exists exactly one Pythagorean triplet for which " &
       "a + b + c = 1000. Find the product abc.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0009_Special_Pythagorean_Triplet;

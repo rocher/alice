@@ -38,7 +38,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0027_Quadratic_Primes is
 
@@ -54,8 +55,8 @@ package P0027_Quadratic_Primes is
       "expression that produces the maximum number of primes for " &
       "consecutive values of n, starting with n=0.");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0027_Quadratic_Primes;

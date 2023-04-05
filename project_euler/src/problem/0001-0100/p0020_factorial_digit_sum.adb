@@ -28,7 +28,10 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0020_Factorial_Digit_Sum is
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
       Factorial : Big_Natural := 1;
       Answer    : Natural     := 0;
    begin

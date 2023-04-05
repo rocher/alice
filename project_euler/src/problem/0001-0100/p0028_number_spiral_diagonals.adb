@@ -33,7 +33,10 @@ with Euler_Tools_Int2; use Euler_Tools_Int2;
 
 package body P0028_Number_Spiral_Diagonals is
 
-   overriding function Answer (Problem : in out Problem_Type) return String is
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
 
       --  Σ_Diagonal:
       --     1 : 1, 3, 13, 31 -> right-down

@@ -20,6 +20,7 @@
 --
 -------------------------------------------------------------------------------
 
+with Ada.Strings.Unbounded;     use Ada.Strings.Unbounded;
 with Project_Euler.GUI;         use Project_Euler.GUI;
 with Project_Euler.GUI_Plotter; use Project_Euler.GUI_Plotter;
 
@@ -35,9 +36,9 @@ package P0007_10001st_Prime is
    overriding function Brief (Problem : Problem_Type) return String is
      ("What is the 10001st prime number?");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String is ("");
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
    overriding procedure Plotter_Setup
      (Problem : Problem_Type; Plotter : Pointer_To_Plotter_Class);

@@ -41,11 +41,13 @@ with Euler_Tools; use Euler_Tools;
 
 package body P0012_Highly_Divisible_Triangular_Number is
 
-   Divisors : Set_Type;
-
-   overriding function Answer (Problem : in out Problem_Type) return String is
-      Number : Integer_Type := 8;
-      Answer : Integer_Type;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String
+   is
+      Number   : Integer_Type := 8;
+      Divisors : Set_Type;
+      Answer   : Integer_Type;
    begin
 
       loop
@@ -57,10 +59,11 @@ package body P0012_Highly_Divisible_Triangular_Number is
          Number := @ + 1;
       end loop;
 
+      Notes :=
+        To_Unbounded_String
+          ("It has" & Natural'Image (Length (Divisors)) & " divisors.");
+
       return To_String (Answer);
    end Answer;
-
-   overriding function Notes (Problem : Problem_Type) return String is
-     ("It has" & Natural'Image (Length (Divisors)) & " divisors.");
 
 end P0012_Highly_Divisible_Triangular_Number;

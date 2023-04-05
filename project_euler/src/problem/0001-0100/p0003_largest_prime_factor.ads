@@ -19,7 +19,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0003_Largest_Prime_Factor is
 
@@ -33,8 +34,8 @@ package P0003_Largest_Prime_Factor is
    overriding function Brief (Problem : Problem_Type) return String is
      ("What is the largest prime factor of the number 600851475143?");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String is ("");
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0003_Largest_Prime_Factor;

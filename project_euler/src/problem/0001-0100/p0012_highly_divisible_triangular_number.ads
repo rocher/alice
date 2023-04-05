@@ -37,7 +37,8 @@
 --
 -------------------------------------------------------------------------------
 
-with Project_Euler.CLI; use Project_Euler.CLI;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Project_Euler.CLI;     use Project_Euler.CLI;
 
 package P0012_Highly_Divisible_Triangular_Number is
 
@@ -52,8 +53,8 @@ package P0012_Highly_Divisible_Triangular_Number is
      ("What is the value of the first triangle number to have over five " &
       "hundred divisors?");
 
-   overriding function Answer (Problem : in out Problem_Type) return String;
-
-   overriding function Notes (Problem : Problem_Type) return String;
+   overriding function Answer
+     (Problem : in out Problem_Type; Notes : in out Unbounded_String)
+      return String;
 
 end P0012_Highly_Divisible_Triangular_Number;
