@@ -1,0 +1,20 @@
+name = "alice_project_euler"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Francesc Rocher"]
+maintainers = ["Francesc Rocher <francesc.rocher@gmail.com>"]
+maintainers-logins = ["rocher"]
+
+[build-switches]
+"*".ada_version = ["-gnat2022", "-gnatX", "-gnatW8"]
+
+[[actions.'case(os)'.linux]]
+type = "post-fetch"
+command = ["/bin/bash", "-e", "action/update-problems.sh"]
+
+[[depends-on]]
+ansiada = "^1.0.0"
+gnoga = "^2.1.2"
+parse_args = "~0.9.0"
+simple_logging = "^1.2.0"
