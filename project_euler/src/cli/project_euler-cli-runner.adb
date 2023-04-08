@@ -120,6 +120,8 @@ package body Project_Euler.CLI.Runner is
             Put (Indent);
             Put_Line (Fill_Paragraph ("Note: " & To_String (Notes)));
          end if;
+
+         New_Line;
       end;
    end Run;
 
