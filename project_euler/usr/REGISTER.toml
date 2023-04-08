@@ -45,7 +45,7 @@ organization = "Alice project"
 
 # participant data
 usr = "rocher" # MUST BE UNIQUE
-repository.url = "git@github.com:rocher/Project_Euler_for_Alice"
+repository.url = "git@github.com:rocher/Alice_Project_Euler_Rocher"
 repository.branch = "main"
 
 
