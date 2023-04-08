@@ -9,10 +9,3 @@ licenses = "MIT"
 tags = ["adventures", "excellence", "learning", "mathematics"]
 website = "https://github.com/rocher/alice"
 
-[[depends-on]]
-ansiada = "^1.0.0"
-gnoga = "^2.1.2"
-[[depends-on]]
-parse_args = "~0.9.0"
-[[depends-on]]
-simple_logging = "^1.2.0"
