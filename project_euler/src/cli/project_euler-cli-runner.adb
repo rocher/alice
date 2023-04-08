@@ -9,9 +9,10 @@
 with Text_IO; use Text_IO;
 
 with AnsiAda;        use AnsiAda;
-with Alice_Config;   use Alice_Config;
 with Parse_Args;     use Parse_Args;
 with Simple_Logging; use Simple_Logging;
+
+with Alice_Project_Euler_Config; use Alice_Project_Euler_Config;
 
 package body Project_Euler.CLI.Runner is
 
@@ -45,7 +46,7 @@ package body Project_Euler.CLI.Runner is
       Parser : Parse_Args.Argument_Parser;
    begin
       pragma Warnings (Off);
-      if Alice_Config.Build_Profile = development then
+      if Alice_Project_Euler_Config.Build_Profile = development then
          Simple_Logging.Level := Simple_Logging.Debug;
       else
          Simple_Logging.Level := Simple_Logging.Info;
