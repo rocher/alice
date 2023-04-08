@@ -9,6 +9,11 @@
 with "config/alice_config.gpr";
 aggregate project Alice is
 
-   for Project_Files use ("project_euler.gpr");
+   --  PROJECT EULER
+
+   --  Common Tools
+
+   --  Participants repositories
+   for Project_Files use ("project_euler/usr/**/*.gpr");
 
 end Alice;
