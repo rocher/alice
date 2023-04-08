@@ -1,0 +1,15 @@
+[1]
+title = "Multiples of 3 or 5"
+brief = "Find the sum of all the multiples of 3 or 5 below 1000."
+
+[2]
+title = "Even Fibonacci numbers"
+brief = "By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms."
+
+[3]
+title = "Largest prime factor"
+brief = ""
+
+[4]
+title = "Largest palindrome product"
+brief = "Find the largest palindrome made from the product of two 3-digit numbers."
