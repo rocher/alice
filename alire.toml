@@ -1,11 +1,10 @@
 name = "alice"
 description = "Adventures for Learning and Inspiring Coding Excellence"
 version = "0.1.0-dev"
+website = "https://github.com/rocher/Alice/wiki"
+licenses = ["MIT"]
+tags = ["alice", "adventures", "coding excellence", "learning", "mathematics", "problems", "challenges"]
 
 authors = ["Francesc Rocher"]
 maintainers = ["Francesc Rocher <francesc.rocher@gmail.com>"]
 maintainers-logins = ["rocher"]
-licenses = "MIT"
-tags = ["adventures", "excellence", "learning", "mathematics"]
-website = "https://github.com/rocher/alice"
-

@@ -1,6 +1,9 @@
 name = "alice_project_euler"
-description = "Shiny new project"
+description = "Project Euler support for Alice"
 version = "0.1.0-dev"
+website = "https://github.com/rocher/Alice/wiki"
+licenses = ["MIT"]
+tags = ["alice", "adventures", "coding excellence", "learning", "mathematics", "project Euler"]
 
 authors = ["Francesc Rocher"]
 maintainers = ["Francesc Rocher <francesc.rocher@gmail.com>"]
