@@ -11,7 +11,7 @@ maintainers-logins = ["rocher"]
 
 [[actions.'case(os)'.linux]]
 type = "post-fetch"
-command = ["/bin/bash", "-e", "action/update-problems.sh"]
+command = ["/bin/bash", "-e", "action/update.sh"]
 
 [[depends-on]]
 ansiada = "^1.0.0"
