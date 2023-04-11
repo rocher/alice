@@ -14,12 +14,13 @@ project Alice_Project_Euler is
      external ("ALICE_PROJECT_EULER_LIBRARY_TYPE", external ("LIBRARY_TYPE", "static"));
    for Library_Kind use Library_Type;
 
-   for Library_Interface use (
-      "Project_Euler",
-      "Project_Euler.CLI", "Project_Euler.CLI.Runner",
-      "Project_Euler.GUI", "Project_Euler.GUI_Factory", "Project_Euler.GUI_Plotter",
-      "Project_Euler.GUI_Runner_Gnoga"
-   );
+--   for Library_Interface use (
+--      "Project_Euler",
+--      "Project_Euler.CLI", "Project_Euler.CLI.Runner",
+--      "Project_Euler.GUI", "Project_Euler.GUI_Factory", "Project_Euler.GUI_Plotter",
+--      "Project_Euler.GUI_Runner",
+--      "Project_Euler.GUI_Runner_Gnoga"
+--   );
 
    package Compiler is
       for Default_Switches ("Ada") use Alice_Project_Euler_Config.Ada_Compiler_Switches;
@@ -28,9 +29,5 @@ project Alice_Project_Euler is
    package Binder is
       for Switches ("Ada") use ("-Es"); --  Symbolic traceback
    end Binder;
-
-   package Install is
-      for Artifacts (".") use ("share");
-   end Install;
 
 end Alice_Project_Euler;
