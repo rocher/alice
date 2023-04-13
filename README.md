@@ -5,9 +5,7 @@
 [![License](https://img.shields.io/github/license/rocher/alice.svg?color=blue)](https://github.com/rocher/alice/blob/master/LICENSE)
 -->
 
-<p align="right" style="padding:0;margin:0;">
-   <img src="Alice_Adventures.png" width="250" />
-</p>
+<img src="Alice_Adventures.png" width="250" />
 
 # Alice
 
