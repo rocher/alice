@@ -30,7 +30,7 @@ programs are error-free and performant. So whether you're a seasoned Ada
 programmer or new to the language, Alice is the perfect platform to hone your
 skills and push your limits.
 
-> #### See [Alice wiki](https://github.com/rocher/Alice/wiki) for more information.
+> ### See [Alice wiki](https://github.com/rocher/Alice/wiki) for more information.
 
 ## Collaboration
 
