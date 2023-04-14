@@ -7,18 +7,24 @@
 -------------------------------------------------------------------------------
 
 with "config/alice_config.gpr";
-aggregate project Alice is
+project Alice is
 
-   --  Project Euler
-   for Project_Files use ("project_euler/alice_project_euler.gpr");
+   for Source_Dirs use ("src/**", "config/");
+   for Object_Dir use "obj/" & Alice_Config.Build_Profile;
+   for Create_Missing_Dirs use "True";
+   for Exec_Dir use "bin";
+   for Main use ("alice.adb");
 
-   --  Participant projects
-   for Project_Files use ("project_euler/usr/**/*.gpr");
+   package Compiler is
+      for Default_Switches ("Ada") use Alice_Config.Ada_Compiler_Switches;
+   end Compiler;
 
-   --  Codingame
-   --  TBD
+   package Binder is
+      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+   end Binder;
 
-   --  Advent of Code
-   --  TBD
+   package Install is
+      for Artifacts (".") use ("share");
+   end Install;
 
 end Alice;
