@@ -8,3 +8,6 @@ tags = ["alice", "adventures", "learning", "mathematics", "problems", "challenge
 authors = ["Francesc Rocher"]
 maintainers = ["Francesc Rocher <francesc.rocher@gmail.com>"]
 maintainers-logins = ["rocher"]
+
+[[depends-on]]
+clic = "~0.2.1"
